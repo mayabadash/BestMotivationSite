@@ -45,9 +45,6 @@
       <!-- the gif will be inserted here -->
     </div>
     <script>
-      // Generate a random number
-      const randomTextNumber = Math.floor(Math.random() * 12);
-      const randomImageNumber = Math.floor(Math.random() * 3);
 
       // Define an array of strings
       const textArray = [
@@ -60,18 +57,25 @@
         "אני כשטוביה יצא מהארון"
       ];
 
-      // Get the randomly chosen text
-      const text = textArray[6];
-
-      // Set the content of the div to the chosen text
-      document.querySelector(".text").innerHTML = text;
-
-      // Define an array of image URLs
-      const imageArray = [
+            // Define an array of image URLs
+            const imageArray = [
         "https://e1.pxfuel.com/desktop-wallpaper/608/231/desktop-wallpaper-sunny-sun-summer-pattern.jpg",
         "https://d3octkd2uqmyim.cloudfront.net/media/bi/35142/precious-daisies-wallpaper-l.jpg?q=1664322743",
         "https://img.freepik.com/premium-vector/70s-seamless-pattern-with-vintage-daisy-camomile-groovy-flowers-psychedelic-floral-background_522613-410.jpg?w=2000"
       ];
+
+            // Generate a random number
+      const randomTextNumber = Math.floor(Math.random() * textArray.length);
+      const randomImageNumber = Math.floor(Math.random() * imageArray.length);
+
+
+      // Get the randomly chosen text
+      const text = textArray[randomTextNumber];
+
+      // Set the content of the div to the chosen text
+      document.querySelector(".text").innerHTML = text;
+
+
 
       // Get the randomly chosen image URL
       const imageURL = imageArray[randomImageNumber];
