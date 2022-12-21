@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <style>
+    
+      body {
+        /* Set the background image and make it cover the entire page */
+        background-size: cover;
+      }
+      
+      .text {
+        /* Add some padding to the text to make it easier to read */
+        padding: 32px;        
+        /* Set the text color to white so it stands out against the background image */
+        color: black;
+        
+        /* Center the text horizontally and vertically */
+        text-align: center;
+        padding: 400px 0;
+
+        /* line-height: 100vh; */
+        
+        /* Set the font size and font family */
+        font-size: 130px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      /* Add a new style for the GIF container */
+      .gif-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Style the GIF element */
+      .gif {
+        width: 100%;
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text" dir="rtl">
+      <!-- The text will be generated and displayed here -->
+    </div>
+    <!-- Add a container for the GIF element -->
+    <div id="gif-container" style="text-align:center">
+      <!-- the gif will be inserted here -->
+    </div>
+    <script>
+      // Generate a random number
+      const randomTextNumber = Math.floor(Math.random() * 12);
+      const randomImageNumber = Math.floor(Math.random() * 3);
+
+      // Define an array of strings
+      const textArray = [
+        "אתה תחת של בן אדם",
+        "אתה משמעותית פחות יפה מביבי",
+        "יאפס",
+        "אתה נמושה",
+        "אתה מזכיר בווייב את הג'ירפה ממדגסקר",
+        "26 חורפים של ביזיון",
+        "אני כשטוביה יצא מהארון"
+      ];
+
+      // Get the randomly chosen text
+      const text = textArray[6];
+
+      // Set the content of the div to the chosen text
+      document.querySelector(".text").innerHTML = text;
+
+      // Define an array of image URLs
+      const imageArray = [
+        "https://e1.pxfuel.com/desktop-wallpaper/608/231/desktop-wallpaper-sunny-sun-summer-pattern.jpg",
+        "https://d3octkd2uqmyim.cloudfront.net/media/bi/35142/precious-daisies-wallpaper-l.jpg?q=1664322743",
+        "https://img.freepik.com/premium-vector/70s-seamless-pattern-with-vintage-daisy-camomile-groovy-flowers-psychedelic-floral-background_522613-410.jpg?w=2000"
+      ];
+
+      // Get the randomly chosen image URL
+      const imageURL = imageArray[randomImageNumber];
+
+      // Set the background image of the body element to the chosen image
+      document.querySelector("body").style.backgroundImage = `url(${imageURL})`;
+      
+          // define a condition
+    const showGif = true;
+
+    // check the condition
+    if (text == "אני כשטוביה יצא מהארון") {
+      // create the img element
+      const img = document.createElement("img");
+      img.src = "https://i.giphy.com/media/36JXYwGP6VFmptw45L/giphy.webp";
+      img.alt = "Animated GIF";
+
+      // insert the img element into the gif container
+      const gifContainer = document.getElementById("gif-container");
+      gifContainer.appendChild(img);
+    }
+
+			
+    </script>
+  </body>
+</html>
+
